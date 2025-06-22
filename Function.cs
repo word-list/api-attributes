@@ -23,7 +23,7 @@ public class Function
                 Max = attr.Max,
                 Display = attr.Display,
             })
-            .ToArray();
+            .ToList();
 
         var app = CreateHostBuilder(args).Build();
         var api = app.MapGroup("/api");
@@ -53,7 +53,7 @@ public class Function
 
 [JsonSerializable(typeof(string))]
 [JsonSerializable(typeof(AttributeDto))]
-[JsonSerializable(typeof(AttributeDto[]))]
+[JsonSerializable(typeof(List<AttributeDto>))]
 [JsonSerializable(typeof(APIGatewayHttpApiV2ProxyRequest))]
 [JsonSerializable(typeof(APIGatewayHttpApiV2ProxyResponse))]
 public partial class LambdaFunctionJsonSerializerContext : JsonSerializerContext
