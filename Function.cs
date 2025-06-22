@@ -30,7 +30,7 @@ public class Function
 
         api.MapGet("/attributes", new RequestDelegate((context) =>
         {
-            return context.Response.WriteAsJsonAsync(attributes, LambdaFunctionJsonSerializerContext.Default.AttributeDto);
+            return context.Response.WriteAsJsonAsync(attributes, LambdaFunctionJsonSerializerContext.Default.ListAttributeDto);
         }));
 
         await app.RunAsync();
