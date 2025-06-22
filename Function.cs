@@ -12,6 +12,7 @@ public class Function
 {
     public static async Task Main(string[] args)
     {
+        await WordAttributes.LoadAsync().ConfigureAwait(false);
         var attributes = (await WordAttributes.GetAllAsync().ConfigureAwait(false))
             .OrderBy(attr => attr.Name)
             .Select(attr => new AttributeDto
